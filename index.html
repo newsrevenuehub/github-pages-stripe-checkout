@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/global.css" />
     <!-- Load Stripe.js on your website. -->
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="/index.js"></script>
   </head>
 
   <body>
@@ -20,11 +21,36 @@
         </header>
         <div class="sr-container">
           <section class="container">
+            <h1>Frequency</h1>
+            <div>Choose a contribution type.</div>
+            <div class="js-frequency">
+              <input type="radio" id="one-time" name="contribution" value="one-time" checked>
+              <label class="sr-checkbox-label" for="one-time">One time</label>
+              <input type="radio" id="monthly" name="contribution" value="monthly">
+              <label class="sr-checkbox-label" for="monthly">Monthly</label>
+              <input type="radio" id="annual" name="contribution" value="annual">
+              <label class="sr-checkbox-label" for="annuel">Annual</label>
+          </div>
+          </section>
+        </div>
+        <!-- <div class="sr-container">
+          <section class="container">
             <h1>One-time Donation</h1>
-            <button data-sku-id="sku_foo">Donate $5.00 once</button>
+            <button data-sku-id="sku_GU4JYXyvvRb2sX">Donate $5.00</button>
+            <input type="number" name="amount" class="js-amount sr-input" id="amount" placeholder="Other amount"></input>
+          <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate $</button>
           </section>
         </div>
         <div id="error-message"></div>
+        <div class="sr-container">
+          <section class="container">
+            <h1>Recurring Donation</h1>
+            <button data-sku-id="sku_GU4JYXyvvRb2sX">Donate $5.00</button>
+            <input type="number" name="amount" class="js-amount sr-inout" id="amount" placeholder="Other amount"></input>
+          <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate $</button>
+          </section>
+        </div>
+        <div id="error-message"></div> -->
       </div>
     </div>
     <div class="banner">
@@ -39,29 +65,5 @@
         </a>
       </span>
     </div>
-
-    <script>
-      var PUBLISHABLE_KEY = "pk_test_foo";
-      var stripe = Stripe(PUBLISHABLE_KEY);
-      // Handle any errors from Checkout
-      var handleResult = function(result) {
-        if (result.error) {
-          var displayError = document.getElementById("error-message");
-          displayError.textContent = result.error.message;
-        }
-      };
-
-      document.querySelectorAll("button").forEach(function(button) {
-        button.addEventListener("click", function(e) {
-          stripe
-            .redirectToCheckout({
-              items: [{sku: 'sku_foo', quantity: 20}],
-              successUrl: 'https://foo.com/success',
-              cancelUrl: 'https://foo.com/canceld',
-            })
-            .then(handleResult);
-        });
-      });
-    </script>
   </body>
 </html>
