@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/global.css" />
     <!-- Load Stripe.js on your website. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="/index.js"></script>
   </head>
@@ -23,22 +24,22 @@
           <section class="container">
             <h1>Frequency</h1>
             <div>Choose a contribution type.</div>
-            <div class="js-frequency">
+              <form class="js-frequency">
               <input type="radio" id="one-time" name="contribution" value="one-time" checked>
               <label class="sr-checkbox-label" for="one-time">One time</label>
               <input type="radio" id="monthly" name="contribution" value="monthly">
               <label class="sr-checkbox-label" for="monthly">Monthly</label>
               <input type="radio" id="annual" name="contribution" value="annual">
               <label class="sr-checkbox-label" for="annuel">Annual</label>
-          </div>
+            </form>
+          </section>
+          <section class="container js-donationType">
+            
           </section>
         </div>
         <!-- <div class="sr-container">
           <section class="container">
-            <h1>One-time Donation</h1>
-            <button data-sku-id="sku_GU4JYXyvvRb2sX">Donate $5.00</button>
-            <input type="number" name="amount" class="js-amount sr-input" id="amount" placeholder="Other amount"></input>
-          <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate $</button>
+           
           </section>
         </div>
         <div id="error-message"></div>
