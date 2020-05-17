@@ -1,26 +1,30 @@
 $(document).ready(function() { 
 
     
+    // client reference dictionary 
+    
 
-    var inputBox = $('.js-amount');
-    var donate = $('.js-donate');
-    var type = $('.js-donationType')
-    var radio = $('input[name=contribution]:checked', '.js-frequency')
 
     // on load, fill the donation type div with one time donation information 
 
     var oneTime = `<h1>One-time Donation</h1>
     <button data-sku-id="sku_GU4JYXyvvRb2sX">Donate $5.00</button>
     <input type="number" name="amount" class="js-amount sr-input" id="amount" placeholder="Other amount"></input>
-    <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate $</button>`;
+    <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate </button>`;
     type.append(oneTime);
 
     // when the user enters a custom amount, change the donate button
 
     $('.js-amount').on('keyup', function(){
+      var val = $(this).val()
+      var fee = val * 0.05
       $('.js-donate').empty()
       $('.js-donate').append(`Donate $${$(this).val()}`);
+      $('.fee-color').empty()
+      $('.fee-color').append(`$${fee.toFixed(2)}`)
     })
+
+    var type = $('.js-donationType')
 
   // when the input changes, change the text of the frequency section accordingly
     $('.js-frequency input').on('change', function() {
@@ -30,27 +34,36 @@ $(document).ready(function() {
         var text = `<h1>Monthly Donation</h1>
       <button data-sku-id="sku_GU4JYXyvvRb2sX">Donate Monthly $5.00</button>
       <input type="number" name="amount" class="js-amount sr-input" id="amount" placeholder="Other amount"></input>
-      <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate Monthly $</button>`;
+      <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate </button>`;
       type.append(text)
+      $('.fee-timing').empty()
+      $('.fee-timing').append(' monthly')
       }
       if (frequency === 'one-time') {
         var text = `<h1>One-time Donation</h1>
         <button data-sku-id="sku_GU4JYXyvvRb2sX">Donate $5.00</button>
         <input type="number" name="amount" class="js-amount sr-input" id="amount" placeholder="Other amount"></input>
-        <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate $</button>`;
+        <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate </button>`;
+        $('.fee-timing').empty()
       type.append(text)
       }
       if (frequency === 'annual') {
         var text = `<h1>Annual Donation</h1>
       <button data-sku-id="sku_GU4JYXyvvRb2sX">Donate Annually $5.00</button>
       <input type="number" name="amount" class="js-amount sr-input" id="amount" placeholder="Other amount"></input>
-      <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate Annually $</button>`;
+      <button class="js-donate" data-sku-id="sku_HGVTCiLopfXurK">Donate </button>`;
+      $('.fee-timing').empty()
+      $('.fee-timing').append(' annually')
       type.append(text)
       }
       
       $('.js-amount').on('keyup', function(){
+        var val = $(this).val()
+        var fee = val * 0.05
         $('.js-donate').empty()
         $('.js-donate').append(`Donate $${$(this).val()}`);
+        $('.fee-color').empty()
+        $('.fee-color').append(`$${fee.toFixed(2)}`)
       })
    });
 

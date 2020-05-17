@@ -45,6 +45,28 @@ h4 {
 }
 
 /* Layout */
+.fee-color { 
+  color: var(--accent-color);
+}
+
+
+.fee-disclaimer {
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
+.js-frequency {
+  display: flex; 
+  flex-direction: column;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.js-payment { 
+  display: flex; 
+  flex-direction: column;
+}
+
 .sr-root {
   display: flex;
   flex-direction: row;
@@ -65,6 +87,8 @@ h4 {
 }
 .sr-payment-summary {
   margin-bottom: 20px;
+  margin-top: 20px;
+  width: var(--form-width);
 }
 .sr-main,
 .sr-content {
@@ -120,6 +144,7 @@ input[type="text"],
 input[type="number"] {
   border: 1px solid var(--gray-border);
   border-radius: var(--radius);
+  margin-top: 2rem;
   padding: 5px 12px;
   height: 44px;
   width: 100%;

@@ -25,18 +25,26 @@
             <h1>Frequency</h1>
             <div>Choose a contribution type.</div>
               <form class="js-frequency">
-              <input type="radio" id="one-time" name="contribution" value="one-time" checked>
-              <label class="sr-checkbox-label" for="one-time">One time</label>
-              <input type="radio" id="monthly" name="contribution" value="monthly">
-              <label class="sr-checkbox-label" for="monthly">Monthly</label>
-              <input type="radio" id="annual" name="contribution" value="annual">
-              <label class="sr-checkbox-label" for="annuel">Annual</label>
-            </form>
+                <span><input type="radio" id="one-time" name="contribution" value="one-time" checked>
+                <label class="sr-checkbox-label" for="one-time">One time</label></span>
+                <span><input type="radio" id="monthly" name="contribution" value="monthly">
+                <label class="sr-checkbox-label" for="monthly">Monthly</label></span>
+                <span><input type="radio" id="annual" name="contribution" value="annual">
+                <label class="sr-checkbox-label" for="annual">Annual</label></span>
+              </form>
           </section>
           <section class="container js-donationType">
             
           </section>
         </div>
+        <div class="sr-payment-summary">
+        <section class="js-payment">
+          <div>Agree to pay fees?</div>
+          <div><input class="js-fees" type="checkbox"></input>
+          <label class="sr-checkbox-label" for="fees"><span class="fee-color"></span><span class="fee-timing"></span></label></div>
+          <div class="fee-disclaimer">Paying the Stripe transaction fee, while not required, directs more money in support of our mission.</div>
+        </section>
+      </div>
         <!-- <div class="sr-container">
           <section class="container">
            
