@@ -15,7 +15,7 @@ $(document).ready(function() {
     // when the user clicks an amount, change the fee
     $('.js-number').on('click', function(){
       var val = parseInt($(this).attr('data-id-amount'));
-      var fee = val * 0.05
+      var fee = val * 0.03
       $('.fee-color').empty()
       $('.fee-color').append(`$${fee.toFixed(2)}`)
     })
@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     $('.js-amount').on('keyup', function(){
       var val = $(this).val()
-      var fee = val * 0.05
+      var fee = val * 0.03
       $('.js-donate').empty()
       $('.js-donate').append(`Donate $${$(this).val()}`);
       $('.fee-color').empty()
@@ -69,7 +69,7 @@ $(document).ready(function() {
       
       $('.js-amount').on('keyup', function(){
         var val = $(this).val()
-        var fee = val * 0.05
+        var fee = val * 0.03
         $('.js-donate').empty()
         $('.js-donate').append(`Donate $${$(this).val()}`);
         $('.fee-color').empty()
@@ -80,7 +80,7 @@ $(document).ready(function() {
       $('.js-number').on('click', function(){
         var val = $(this).attr('data-id-amount');
         var val = parseInt($(this).attr('data-id-amount'));
-        var fee = val * 0.05
+        var fee = val * 0.03
         $('.fee-color').empty()
         $('.fee-color').append(`$${fee.toFixed(2)}`)
       })
